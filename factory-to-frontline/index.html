@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From Factory to Frontline</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap" id="app">
+  <div class="topline"></div>
+  <header class="hero">
+    <div>
+      <div class="kicker">Historical investigation • Industrial Revolution → World War I</div>
+      <h1>From Factory<br>to Frontline</h1>
+      <p>Use evidence to investigate how industrialisation increased Europe’s capacity to build, move and supply powerful militaries before 1914.</p>
+    </div>
+    <div class="mission">Mission<br>Build an evidence dossier<br>and prove the connection</div>
+  </header>
+
+  <div class="progress" aria-label="Progress">
+    <div class="active" data-ind="1">01 Prioritise</div><div data-ind="2">02 Source</div><div data-ind="3">03 Data</div><div data-ind="4">04 Mobilise</div><div data-ind="5">05 Causation</div><div data-ind="6">06 Rank</div><div data-ind="7">07 Explain</div>
+  </div>
+
+  <div class="layout">
+    <main>
+      <section class="panel active" data-panel="1">
+        <div class="head"><div class="num">01</div><div><h2>Which Industrial Changes Matter Most?</h2><p>Select exactly <strong>three</strong> developments you think would most increase a country's ability to fight a modern war.</p></div></div>
+        <div class="note"><strong>No single ranking is perfect.</strong> Prioritise developments that could increase military production, transport or supply.</div>
+        <div class="grid" id="priority">
+          <button class="card" data-valid="1" data-name="Factories"><strong>Factories</strong><span>Large-scale mechanised production.</span></button>
+          <button class="card" data-valid="1" data-name="Railways"><strong>Railways</strong><span>Rapid movement over long distances.</span></button>
+          <button class="card" data-valid="1" data-name="Steel"><strong>Steel</strong><span>Stronger machinery, rails and ships.</span></button>
+          <button class="card" data-valid="1" data-name="Coal and steam"><strong>Coal & steam</strong><span>Energy for factories and transport.</span></button>
+          <button class="card" data-valid="1" data-name="Precision engineering"><strong>Precision engineering</strong><span>Improved machinery and manufactured parts.</span></button>
+          <button class="card" data-valid="0" data-name="Cottage industry"><strong>Cottage industry</strong><span>Small-scale hand production in homes.</span></button>
+        </div>
+        <div class="actions"><button class="btn" id="check1">Lock in three choices</button></div>
+        <div class="feedback" id="feed1" aria-live="polite"></div>
+        <div class="actions"><button class="btn" id="next1" disabled>Open Source A →</button></div>
+      </section>
+
+      <section class="panel" data-panel="2">
+        <div class="head"><div class="num">02</div><div><h2>Evidence File A — Industrial Warfare</h2><p>Analyse the historical source before making an inference.</p></div></div>
+        <div class="sourcegrid">
+          <div>
+            <div class="sourcebox">
+              <img id="sourceImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Krupp_Factory_WWI.jpg/640px-Krupp_Factory_WWI.jpg" alt="Krupp Gun Works during the First World War">
+              <div class="fallback" id="fallback"><strong>Image unavailable on this network.</strong><br><br>Source description: a very large industrial workshop containing heavy machinery, large manufactured components and numerous workers operating within a mechanised factory system.</div>
+            </div>
+            <div class="caption">Krupp Gun Works, Germany, published 1915. Industrial-scale manufacture of army and navy guns.</div>
+            <p class="source-note"><strong>Source caution:</strong> this wartime image shows what industrialisation made possible; it does not prove why governments chose war in 1914.</p>
+          </div>
+          <div>
+            <h3>Observation first</h3><p>Select the <strong>three observations</strong> supported by the source.</p>
+            <div class="checks" id="observations">
+              <label><input type="checkbox" data-good="1"> A very large industrial workspace</label>
+              <label><input type="checkbox" data-good="1"> Heavy machinery and large components</label>
+              <label><input type="checkbox" data-good="1"> Workers in a mechanised factory system</label>
+              <label><input type="checkbox" data-good="0"> Thousands of cavalry horses</label>
+              <label><input type="checkbox" data-good="0"> A small family hand-workshop</label>
+            </div>
+            <div class="actions"><button class="btn" id="checkObs">Check observations</button></div>
+            <div class="feedback" id="obsFeed"></div>
+          </div>
+        </div>
+        <div id="inference" class="hidden">
+          <div class="note"><strong>Inference:</strong> Which conclusion is best supported by this source?</div>
+          <div class="mcq" id="infQ">
+            <button class="option" data-good="0">Factories directly caused European governments to declare war.</button>
+            <button class="option" data-good="1">Industrialisation allowed military equipment to be produced on a scale impossible for small hand-production systems.</button>
+            <button class="option" data-good="0">Industrial warfare reduced the importance of manufacturing.</button>
+            <button class="option" data-good="0">Only Germany possessed industrial factories.</button>
+          </div>
+          <div class="feedback" id="infFeed"></div>
+        </div>
+        <div class="actions"><button class="btn" id="next2" disabled>Open Data File →</button></div>
+      </section>
+
+      <section class="panel" data-panel="3">
+        <div class="head"><div class="num">03</div><div><h2>Evidence File B — Military Spending</h2><p>Modern militaries required enormous financial and industrial resources. Interpret the data carefully.</p></div></div>
+        <div class="data"><div class="kicker">Increase in defence expenditure, 1910–1914</div>
+          <div class="bars">
+            <div class="barrow"><strong>France</strong><div class="track"><div class="fill" style="width:14%"></div></div><span>10%</span></div>
+            <div class="barrow"><strong>Britain</strong><div class="track"><div class="fill" style="width:18%"></div></div><span>13%</span></div>
+            <div class="barrow"><strong>Russia</strong><div class="track"><div class="fill" style="width:53%"></div></div><span>39%</span></div>
+            <div class="barrow"><strong>Germany</strong><div class="track"><div class="fill" style="width:100%"></div></div><span>73%</span></div>
+          </div>
+        </div>
+        <div class="dataq"><h4>1. Which country shows the largest percentage increase?</h4><div class="mcq" data-q="d1"><button class="option" data-good="0">France</button><button class="option" data-good="0">Britain</button><button class="option" data-good="0">Russia</button><button class="option" data-good="1">Germany</button></div></div>
+        <div class="dataq"><h4>2. Which two powers show the largest increases?</h4><div class="mcq" data-q="d2"><button class="option" data-good="1">Germany and Russia</button><button class="option" data-good="0">France and Britain</button><button class="option" data-good="0">Britain and Russia</button></div></div>
+        <div class="dataq"><h4>3. Which conclusion is best supported by the data?</h4><div class="mcq" data-q="d3"><button class="option" data-good="0">The figures prove that the Industrial Revolution directly caused WWI.</button><button class="option" data-good="1">Several European powers were increasing military spending before 1914, with particularly large increases in Germany and Russia.</button><button class="option" data-good="0">Only Germany was preparing militarily before 1914.</button></div></div>
+        <div class="feedback show" id="dataFeed">Answer all three correctly to add the data to your dossier.</div>
+        <div class="actions"><button class="btn" id="next3" disabled>Mobilisation Challenge →</button></div>
+      </section>
+
+      <section class="panel" data-panel="4">
+        <div class="head"><div class="num">04</div><div><h2>Mobilise a Modern Army</h2><p>Build the chain that gets equipment and supplies from industrial production to soldiers at the front.</p></div></div>
+        <div class="note"><strong>Task:</strong> Click the five stages in the correct order.</div>
+        <div class="sequence" id="slots"><div class="slot">1</div><div class="slot">2</div><div class="slot">3</div><div class="slot">4</div><div class="slot">5</div></div>
+        <div class="pool" id="pool"><button data-key="3">Rail network</button><button data-key="1">Factory production</button><button data-key="5">Front-line army</button><button data-key="2">Rail loading station</button><button data-key="4">Supply depot near the front</button></div>
+        <div class="actions"><button class="btn alt" id="undo4">Undo last</button><button class="btn" id="check4">Check sequence</button></div>
+        <div class="feedback" id="feed4"></div>
+        <div id="complication" class="hidden"><div class="note"><strong>Complication:</strong> The main railway line is damaged. What is the most likely military consequence?</div><div class="mcq" id="compQ"><button class="option" data-good="0">Factories immediately lose the ability to manufacture weapons.</button><button class="option" data-good="1">The army may struggle to receive troops, ammunition and food quickly enough.</button><button class="option" data-good="0">Steel production automatically stops across the country.</button><button class="option" data-good="0">The enemy is forced to surrender.</button></div><div class="feedback" id="compFeed"></div></div>
+        <div class="actions"><button class="btn" id="next4" disabled>Test Causation →</button></div>
+      </section>
+
+      <section class="panel" data-panel="5">
+        <div class="head"><div class="num">05</div><div><h2>Cause, Capacity or Incorrect?</h2><p>Distinguish between something that <strong>triggered</strong> a crisis and something that made large-scale warfare <strong>possible</strong>.</p></div></div>
+        <div class="classify" id="classify">
+          <div class="classrow" data-answer="enable"><p><strong>Factories allowed weapons and ammunition to be mass-produced.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+          <div class="classrow" data-answer="enable"><p><strong>Railways allowed armies and supplies to move rapidly.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+          <div class="classrow" data-answer="trigger"><p><strong>The assassination of Archduke Franz Ferdinand created the immediate crisis of June 1914.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+          <div class="classrow" data-answer="wrong"><p><strong>Industrialisation forced European governments to declare war.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+          <div class="classrow" data-answer="enable"><p><strong>Steel and heavy engineering helped states construct modern artillery, warships and railways.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+          <div class="classrow" data-answer="wrong"><p><strong>Because Europe industrialised, a world war became inevitable.</strong></p><div class="classbuttons"><button data-v="trigger">Direct trigger</button><button data-v="enable">Enabling factor</button><button data-v="wrong">Inaccurate</button></div></div>
+        </div>
+        <div class="feedback show" id="classFeed">Correct: <strong><span id="classCount">0</span>/6</strong></div>
+        <div class="actions"><button class="btn" id="next5" disabled>Rank the Evidence →</button></div>
+      </section>
+
+      <section class="panel" data-panel="6">
+        <div class="head"><div class="num">06</div><div><h2>Rank the Evidence</h2><p>Make a historical judgement. Which developments mattered most for increasing military capacity?</p></div></div>
+        <div class="rankgrid">
+          <div><label for="r1">1st — Most important</label><select id="r1"><option value="">Choose...</option><option>Factories / mass production</option><option>Railway networks</option><option>Steel / heavy industry</option><option>Coal / steam power</option></select></div>
+          <div><label for="r2">2nd</label><select id="r2"><option value="">Choose...</option><option>Factories / mass production</option><option>Railway networks</option><option>Steel / heavy industry</option><option>Coal / steam power</option></select></div>
+          <div><label for="r3">3rd</label><select id="r3"><option value="">Choose...</option><option>Factories / mass production</option><option>Railway networks</option><option>Steel / heavy industry</option><option>Coal / steam power</option></select></div>
+        </div>
+        <div class="note"><strong>Justify your first choice in 25–40 words.</strong> Explain why it mattered more than at least one other development.</div>
+        <textarea id="rankText" maxlength="360" placeholder="I ranked ... first because..."></textarea><div class="word"><span id="rankWords">0</span> words</div>
+        <div class="actions"><button class="btn" id="markRank">Check judgement</button></div><div class="feedback" id="rankFeed"></div>
+        <div class="actions"><button class="btn" id="next6" disabled>Final Historical Challenge →</button></div>
+      </section>
+
+      <section class="panel" data-panel="7">
+        <div class="head"><div class="num">07</div><div><h2>Final Historical Challenge</h2><p>Use your evidence dossier to construct a short historical explanation.</p></div></div>
+        <div class="note"><strong>Question:</strong> Explain how the Industrial Revolution contributed to the growth of militarism in Europe before 1914. <strong>Write 60–90 words.</strong></div>
+        <div class="final">
+          <div><textarea id="finalText" maxlength="750" placeholder="The Industrial Revolution contributed to the growth of militarism because..."></textarea><div class="word"><span id="finalWords">0</span> words</div><div class="actions"><button class="btn" id="markFinal">Mark my response</button><button class="btn alt hidden" id="revise">Revise once</button></div>
+          <div class="score" id="score"><h3 id="scoreHead"></h3><div class="scoregrid"><div class="scorecell">Knowledge<strong id="sk">0/2</strong></div><div class="scorecell">Evidence<strong id="se">0/2</strong></div><div class="scorecell">Explanation<strong id="sx">0/2</strong></div><div class="scorecell">Judgement<strong id="sj">0/2</strong></div></div><div id="scoreText"></div></div></div>
+          <aside class="rubric"><h3>Success criteria — 8 marks</h3><ul><li><strong>Knowledge:</strong> at least two industrial developments.</li><li><strong>Evidence:</strong> specific military applications.</li><li><strong>Explanation:</strong> show how industrial capacity strengthened militaries.</li><li><strong>Judgement:</strong> distinguish capacity from the direct causes of war.</li></ul><p><strong>Avoid:</strong> “The Industrial Revolution caused WWI.”</p></aside>
+        </div>
+        <div class="complete" id="complete"><div class="kicker">Investigation complete</div><h2>Connection Established</h2><p><strong>Industrial Revolution → mass production & transport → military capacity → militarism & arms competition</strong></p><p>Next: Why did European powers compete to build increasingly powerful militaries?</p></div>
+      </section>
+    </main>
+
+    <aside class="dossier"><h3>Evidence Dossier</h3><p>Useful evidence appears here as you progress.</p><div id="dossier"><em>No evidence collected yet.</em></div></aside>
+  </div>
+  <footer><strong>Teacher note:</strong> feedback and marking run locally in the browser. Student responses are not uploaded or stored by this page.</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
